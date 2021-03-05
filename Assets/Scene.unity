@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain
       objectReference: {fileID: 0}
+    - target: {fileID: 5926395627973095489, guid: c3bc0fd9eded1794fa461e1093444e09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5926395627973095490, guid: c3bc0fd9eded1794fa461e1093444e09,
         type: 3}
       propertyPath: m_RootOrder
@@ -197,10 +202,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3669521432088853989, guid: bd78d757fd8e0434ebb981fe1017594a,
+        type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 880772291}
     - target: {fileID: 3820127319691927050, guid: bd78d757fd8e0434ebb981fe1017594a,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820127319691927050, guid: bd78d757fd8e0434ebb981fe1017594a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487838275115992240, guid: bd78d757fd8e0434ebb981fe1017594a,
         type: 3}
@@ -324,6 +339,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd78d757fd8e0434ebb981fe1017594a, type: 3}
+--- !u!114 &880772291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6651175560865682346, guid: bd78d757fd8e0434ebb981fe1017594a,
+    type: 3}
+  m_PrefabInstance: {fileID: 880772290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902703767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca8c7e300960134dbdb0887d63abf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &895794023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,6 +432,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Log
       objectReference: {fileID: 0}
+    - target: {fileID: 8800714672986373611, guid: 97f5a87c0ed439f47bb747bf2b94dc46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8806427704178574543, guid: 97f5a87c0ed439f47bb747bf2b94dc46,
         type: 3}
       propertyPath: m_RootOrder
@@ -413,17 +445,17 @@ PrefabInstance:
     - target: {fileID: 8806427704178574543, guid: 97f5a87c0ed439f47bb747bf2b94dc46,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 185.51955
+      value: 165.757
       objectReference: {fileID: 0}
     - target: {fileID: 8806427704178574543, guid: 97f5a87c0ed439f47bb747bf2b94dc46,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.98
+      value: 25.698
       objectReference: {fileID: 0}
     - target: {fileID: 8806427704178574543, guid: 97f5a87c0ed439f47bb747bf2b94dc46,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 161.23906
+      value: 154.926
       objectReference: {fileID: 0}
     - target: {fileID: 8806427704178574543, guid: 97f5a87c0ed439f47bb747bf2b94dc46,
         type: 3}
@@ -565,6 +597,12 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7541328113583333066, guid: bd78d757fd8e0434ebb981fe1017594a,
     type: 3}
   m_PrefabInstance: {fileID: 880772290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1928156115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8800714672986373611, guid: 97f5a87c0ed439f47bb747bf2b94dc46,
+    type: 3}
+  m_PrefabInstance: {fileID: 1065131903}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2053550727
 GameObject:
@@ -753,7 +791,7 @@ PrefabInstance:
     - target: {fileID: 3084294689744167825, guid: 796289b15f6e10341be6967bc73f564a,
         type: 3}
       propertyPath: Terrain.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3084294689744167825, guid: 796289b15f6e10341be6967bc73f564a,
         type: 3}
@@ -770,6 +808,11 @@ PrefabInstance:
       propertyPath: Terrain.Array.data[0]
       value: 
       objectReference: {fileID: 1481552917}
+    - target: {fileID: 3084294689744167825, guid: 796289b15f6e10341be6967bc73f564a,
+        type: 3}
+      propertyPath: Terrain.Array.data[1]
+      value: 
+      objectReference: {fileID: 1928156115}
     - target: {fileID: 3084294689744167825, guid: 796289b15f6e10341be6967bc73f564a,
         type: 3}
       propertyPath: Managers.Array.data[0]

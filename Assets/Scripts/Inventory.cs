@@ -20,6 +20,6 @@ public class Inventory : MonoBehaviour
 
     public void AddItemToList(CollectableItem item)
     {
-        ItemsList.Add(new CollectableItem(item));
+        ItemsList.Add(item);
     }
 }

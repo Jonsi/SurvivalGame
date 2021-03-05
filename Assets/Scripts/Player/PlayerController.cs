@@ -5,15 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerStats playerStats;
-    public BackpackManager Backpack;
+    public BackPack Backpack;
     public InteractableObject _target;
     
     // Start is called before the first frame update
     void Start()
     {
         _target = null;
-        Backpack = BackpackManager.Singleton;
     }
+    private void OnEnable()
+    {
+        EventManager.Singleton.E_ItemCollected += CollectItem;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Singleton.E_ItemCollected -= CollectItem;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -36,24 +45,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void HandleInteraction(InteractionType type){
+    private void HandleInteraction(){
         
         if(_target != null)
         {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                _target.Interact(InteractionType.HIT, playerStats);
+            }
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                _target.Interact(InteractionType.PICKUP);
+            }
         }
     }
 
-    public void GetInput()
+    private void GetInput()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            _target.Interact(InteractionType.HIT, playerStats);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            _target.Interact(InteractionType.PICKUP);
-        }
+        HandleInteraction();
     }
+
+    private void CollectItem(CollectableItem item)
+    {
+        Backpack.AddItemToBackpack(item);
+    }
+
+    
+
 }
