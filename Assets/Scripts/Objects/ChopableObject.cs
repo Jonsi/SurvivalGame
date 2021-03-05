@@ -31,10 +31,7 @@ public class ChopableObject : InteractableObject, IDamageable
         if(health <= 0)
         {
             EventManager.Singleton.OnChopableDestroyed(this);
-            for (int i = 0; i < CollectableItemPrefab.Amount; i++)
-            {
-                Instantiate(CollectableItemPrefab,transform.position,Quaternion.identity);
-            }
+            Instantiate(CollectableItemPrefab,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
     }

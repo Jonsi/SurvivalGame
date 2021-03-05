@@ -5,6 +5,7 @@ using UnityEngine;
 public class BackPack : MonoBehaviour
 {
     public Inventory Inventory;
+    
 
     private void Awake()
     {
@@ -23,6 +24,6 @@ public class BackPack : MonoBehaviour
 
     public void AddItemToBackpack(CollectableItem item)
     {
-        Inventory.AddItemToList(item);
+        Inventory.AddItemToSlot(item);
     }
 }

@@ -10,13 +10,7 @@ public enum ItemType
 public class CollectableItem : InteractableObject
 {
     public ItemType ItemType;
-    public int Amount = 1;
 
-    public CollectableItem(CollectableItem collObj)
-    {
-        ItemType = collObj.ItemType;
-        Amount = collObj.Amount;
-    }
     // Start is called before the first frame update
     void Start()
     {
