@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<CollectableItem> ItemsList = new List<CollectableItem>();
+    public List<InventorySlot> Slots;
+    public int MaxSlots;
 
+    private void Awake()
+    {
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +23,38 @@ public class Inventory : MonoBehaviour
         
     }
 
-    public void AddItemToList(CollectableItem item)
+    public void AddItemToSlot(CollectableItem item)
     {
-        ItemsList.Add(item);
+        if(Slots.Count == MaxSlots)
+        {
+            Debug.Log("Inv' full. REMOVE AND ADD MESSAGE");
+            return;
+        }
+
+        foreach(InventorySlot slot in Slots)
+        {
+            if(slot.ItemType == item.ItemType)
+            {
+                //already hve item
+                slot.Amount++;
+                return;
+            }
+        }
+
+        Slots.Add(new InventorySlot(item));
+
+    }
+}
+
+[System.Serializable]
+public class InventorySlot
+{
+    public ItemType ItemType;
+    public int Amount;
+
+    public InventorySlot(CollectableItem item)
+    {
+        ItemType = item.ItemType;
+        Amount = 1;
     }
 }
