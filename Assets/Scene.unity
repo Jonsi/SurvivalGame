@@ -202,10 +202,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3669521432088853989, guid: bd78d757fd8e0434ebb981fe1017594a,
+        type: 3}
+      propertyPath: Animtor
+      value: 
+      objectReference: {fileID: 7541328112843397640}
     - target: {fileID: 3820127319691927050, guid: bd78d757fd8e0434ebb981fe1017594a,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820127319691927050, guid: bd78d757fd8e0434ebb981fe1017594a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487838275115992240, guid: bd78d757fd8e0434ebb981fe1017594a,
         type: 3}
@@ -276,6 +286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Slots.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836587398063151379, guid: bd78d757fd8e0434ebb981fe1017594a,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd78d757fd8e0434ebb981fe1017594a, type: 3}
@@ -513,12 +528,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5926395627973095489, guid: c3bc0fd9eded1794fa461e1093444e09,
     type: 3}
   m_PrefabInstance: {fileID: 850143921}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1902703767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3820127319691927050, guid: bd78d757fd8e0434ebb981fe1017594a,
-    type: 3}
-  m_PrefabInstance: {fileID: 880772290}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1928156115 stripped
 GameObject:
@@ -804,7 +813,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Player.Array.data[0]
       value: 
-      objectReference: {fileID: 1902703767}
+      objectReference: {fileID: 3820127319364672200}
     - target: {fileID: 3084294689744167825, guid: 796289b15f6e10341be6967bc73f564a,
         type: 3}
       propertyPath: Terrain.Array.data[0]
@@ -892,3 +901,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796289b15f6e10341be6967bc73f564a, type: 3}
+--- !u!1 &3820127319364672200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3820127319691927050, guid: bd78d757fd8e0434ebb981fe1017594a,
+    type: 3}
+  m_PrefabInstance: {fileID: 880772290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7541328112843397640 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7541328113583333066, guid: bd78d757fd8e0434ebb981fe1017594a,
+    type: 3}
+  m_PrefabInstance: {fileID: 880772290}
+  m_PrefabAsset: {fileID: 0}

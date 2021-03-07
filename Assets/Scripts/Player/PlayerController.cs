@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public PlayerStats playerStats;
     public BackPack Backpack;
     public InteractableObject _target;
+    public Animator Animtor;
     
     // Start is called before the first frame update
     void Start()
@@ -44,16 +45,15 @@ public class PlayerController : MonoBehaviour
             _target = null;
         }
     }
-
-    private void HandleInteraction(){
-        
-        if(_target != null)
+    private void GetInput()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                _target.Interact(InteractionType.HIT, playerStats);
-            }
+            Hit();
+        }
 
+        if (_target != null)
+        {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 _target.Interact(InteractionType.PICKUP);
@@ -61,16 +61,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void GetInput()
-    {
-        HandleInteraction();
-    }
-
     private void CollectItem(CollectableItem item)
     {
         Backpack.AddItemToBackpack(item);
     }
 
-    
+    private void Hit()
+    {
+        Animtor.SetTrigger(PlayerAnim.HIT);
+    }
+
+    private class PlayerAnim
+    {
+        public static string HIT { get { return "Hit"; } }
+        public static string HIT1 { get { return "HIT"; } }
+        public static string HIT2 { get { return "HIT"; } }
+    }
 
 }
