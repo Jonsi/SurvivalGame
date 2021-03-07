@@ -11,7 +11,8 @@
 /[Mm]emoryCaptures/
 /[Ll]ibrary/
 /Assets/NatureManufacture Assets
-/Assets/URP
+/Assets/URP/
+/Assets/Garage Tools URP
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
