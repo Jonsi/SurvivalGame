@@ -4,11 +4,14 @@ using UnityEngine;
 
 public enum ItemType
 {
-    WOOD
+    WOOD,
+    TOOL
 }
 
-public class CollectableItem : InteractableObject
+public class Item : InteractableObject
 {
+    public Item ItemPrefab;
+    public int MaxAmount;
     public ItemType ItemType;
 
     // Start is called before the first frame update
@@ -27,7 +30,6 @@ public class CollectableItem : InteractableObject
     {
         if(type == InteractionType.PICKUP)
         {
-            EventManager.Singleton.OnItemCollected(this);
             Destroy(gameObject);
         }
     }

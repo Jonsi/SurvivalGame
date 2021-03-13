@@ -2,59 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+[System.Serializable]
+public class Inventory
 {
-    public List<InventorySlot> Slots;
+    public List<InventorySlot> ItemSlots;
     public int MaxSlots;
 
-    private void Awake()
-    {
-        
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isFull { get { return ItemSlots.Count == MaxSlots; } }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Rerturns the slot of the added item, null if failed to add.
+    /// </summary>
+    public InventorySlot AddItemToSlot(Item item)
     {
-        
-    }
-
-    public void AddItemToSlot(CollectableItem item)
-    {
-        if(Slots.Count == MaxSlots)
+        foreach(InventorySlot slot in ItemSlots)
         {
-            Debug.Log("Inv' full. REMOVE AND ADD MESSAGE");
-            return;
-        }
-
-        foreach(InventorySlot slot in Slots)
-        {
-            if(slot.ItemType == item.ItemType)
+            if(slot.ItemObject.ItemType == item.ItemType)
             {
-                //already hve item
-                slot.Amount++;
-                return;
+                if(slot.Amount < item.MaxAmount)
+                {
+                    slot.Amount++;
+                    return slot;
+                }
             }
         }
 
-        Slots.Add(new InventorySlot(item));
+        if (isFull)
+        {
+            Debug.LogError("TRYING TO ADD ITEM TO FULL INV");
+            return null;
+        }
 
+        InventorySlot newSlot = new InventorySlot(item);
+        ItemSlots.Add(newSlot);
+        return ItemSlots[ItemSlots.IndexOf(newSlot)];
     }
 }
 
 [System.Serializable]
 public class InventorySlot
 {
-    public ItemType ItemType;
+    public Item ItemObject;
     public int Amount;
 
-    public InventorySlot(CollectableItem item)
+    public InventorySlot(Item item)
     {
-        ItemType = item.ItemType;
         Amount = 1;
     }
 }

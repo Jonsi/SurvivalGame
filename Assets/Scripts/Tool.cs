@@ -2,28 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackPack : MonoBehaviour
+public enum ToolType
 {
-    public Inventory Inventory;
-    
+    Weapon
+}
 
-    private void Awake()
-    {
+public class Tool : Item
+{
+    public ToolType ToolType;
 
-    }
     // Start is called before the first frame update
     void Start()
-    {
-       
-    }
-    // Update is called once per frame
-    void Update()
     {
         
     }
 
-    public void AddItemToBackpack(CollectableItem item)
+    // Update is called once per frame
+    void Update()
     {
-        Inventory.AddItemToSlot(item);
+        
     }
 }

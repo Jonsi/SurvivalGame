@@ -17,7 +17,7 @@ public class EventManager : MonoBehaviour
     public delegate void D_OnChopableDestroyed(ChopableObject chopObj);
     public event D_OnChopableDestroyed E_ChopableDestroyed;
 
-    public delegate void D_OnItemCollected(CollectableItem collObj);
+    public delegate void D_OnItemCollected(Item collObj);
     public event D_OnItemCollected E_ItemCollected;
 
     public void StartInteraction(InteractableObject target, InteractionType type)
@@ -30,9 +30,9 @@ public class EventManager : MonoBehaviour
         E_ChopableDestroyed?.Invoke(chopObj);
     }
 
-    public void OnItemCollected(CollectableItem collObj)
+    public void OnItemCollected(Item collObj)
     {
         E_ItemCollected?.Invoke(collObj);
     }
-    
+
 }
