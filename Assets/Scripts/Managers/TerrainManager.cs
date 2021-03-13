@@ -6,9 +6,10 @@ using UnityEditor;
 public class TerrainManager : MonoBehaviour
 {
     public TerrainData OriginalTerrainData;
-    private TerrainData _terrainData;
-
     public TreeObject TreePrefab;
+    public Transform TreesHolder;
+
+    private TerrainData _terrainData;
     private List<TreeInstance> _treeInstancesList;
 
     private void OnEnable()
@@ -47,7 +48,7 @@ public class TerrainManager : MonoBehaviour
             Vector3 pos = new Vector3(xPos, yPos, zPos);
             TreePrefab.transform.localScale = new Vector3(tree.widthScale, tree.heightScale, tree.widthScale);
             TreePrefab.transform.rotation = Quaternion.AngleAxis(tree.rotation * Mathf.Rad2Deg, Vector3.up);
-            var currentTree = Instantiate(TreePrefab, pos, Quaternion.identity);
+            var currentTree = Instantiate(TreePrefab, pos, Quaternion.identity, TreesHolder);
             currentTree.treeData = tree;
         }
     }

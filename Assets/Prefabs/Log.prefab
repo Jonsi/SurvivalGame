@@ -176,12 +176,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8800714672986373611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c5beacf09082334f88234519a853295, type: 3}
+  m_Script: {fileID: 11500000, guid: 750a6f64a3d71744e965f71d02cb91fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionType: 0
+  ItemPrefab: {fileID: 1270348909236197}
+  MaxAmount: 5
   ItemType: 0
-  Amount: 1
 --- !u!1 &8800757563150971285
 GameObject:
   m_ObjectHideFlags: 0

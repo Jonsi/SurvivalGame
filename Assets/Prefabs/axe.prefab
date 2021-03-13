@@ -11,13 +11,16 @@ GameObject:
   - component: {fileID: 4963767799219319009}
   - component: {fileID: 8308300284450471748}
   - component: {fileID: 6100675859375623054}
+  - component: {fileID: 2452653490051052271}
+  - component: {fileID: 3564573998066792029}
+  - component: {fileID: 2901690955855639006}
   m_Layer: 0
   m_Name: axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4963767799219319009
 Transform:
   m_ObjectHideFlags: 0
@@ -25,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5740128198978251355}
-  m_LocalRotation: {x: 0.5451005, y: 0.521577, z: 0.33607033, w: 0.56380814}
-  m_LocalPosition: {x: 0.12291672, y: 0.012800912, z: 0.21036586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8308300284450471748
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,3 +82,51 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2452653490051052271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740128198978251355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.023107981, y: 0.46999872, z: 0.15416346}
+  m_Center: {x: 0.000000059604645, y: -0.07250809, z: 0.020150485}
+--- !u!114 &3564573998066792029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740128198978251355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1ae4aa7319c454f866e0c547b5b4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemPrefab: {fileID: 3564573998066792029}
+  MaxAmount: 1
+  ItemType: 1
+  ToolType: 0
+  WeaponType: 0
+  Damage: 1
+  HitBox: {fileID: 0}
+--- !u!54 &2901690955855639006
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740128198978251355}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

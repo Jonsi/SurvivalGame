@@ -10,7 +10,7 @@ public enum ChopableType
 public class ChopableObject : InteractableObject, IDamageable
 {
     public ChopableType ChopableType;
-    public CollectableItem CollectableItemPrefab;
+    public Item CollectableItemPrefab;
     public int health = 1; 
 
     // Start is called before the first frame update
@@ -38,9 +38,6 @@ public class ChopableObject : InteractableObject, IDamageable
 
     public override void Interact(InteractionType type, UnitStats stats)
     {
-        if(type == InteractionType.HIT)
-        {
-            GetHit(stats.Damage);
-        }
+        base.Interact(type, stats);
     }
 }
