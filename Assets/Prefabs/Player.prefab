@@ -1015,7 +1015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4487838275115992240
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerStats: {fileID: 6651175560865682346}
-  Backpack: {fileID: 8739972783240708693}
+  PlayerBackpack: {fileID: 8739972783240708693}
   EquipedItem: {fileID: 0}
   _target: {fileID: 0}
   Animtor: {fileID: 7541328113583333066}
@@ -2277,8 +2277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory:
     ItemSlots: []
-    MaxSlots: 0
+    MaxSlots: 6
   ItemsHolder: {fileID: 7098030951930082459}
+  InventroySize: 6
 --- !u!1 &7684857812436420012
 GameObject:
   m_ObjectHideFlags: 0

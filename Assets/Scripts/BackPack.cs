@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackPackManager : MonoBehaviour
+public class BackPack : MonoBehaviour
 {
     public Inventory Inventory;
     public Transform ItemsHolder;
 
+    public int InventroySize = 1;
+
     // Start is called before the first frame update
     void Start()
     {
-        //Inventory = new Inventory();
+        Inventory.MaxSlots = InventroySize;
     }
 
     // Update is called once per frame
@@ -31,6 +33,11 @@ public class BackPackManager : MonoBehaviour
             if (slot.Amount == 1)
             {
                 slot.ItemObject = InitItemObject(item.ItemPrefab);
+                EventManager.Singleton.OnItemSetToSlot(slot);
+            }
+            else
+            {
+                EventManager.Singleton.OnExistingItemCollected(slot);
             }
 
             return slot.ItemObject;
@@ -38,14 +45,6 @@ public class BackPackManager : MonoBehaviour
         else
         {
             return null;
-        }
-    }
-
-    public void InitHolderItems()
-    {
-        foreach (InventorySlot slot in Inventory.ItemSlots)
-        {
-            Instantiate(slot.ItemObject.ItemPrefab, ItemsHolder);
         }
     }
 

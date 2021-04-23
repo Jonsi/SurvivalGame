@@ -8,12 +8,19 @@ public class PlayerAnim
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Singleton;
+
     public PlayerStats PlayerStats;
-    public BackPackManager Backpack;
+    public BackPack PlayerBackpack;
     public Item EquipedItem;
     public InteractableObject _target;
     public Animator Animtor;
-    
+
+    private void Awake()
+    {
+        Singleton = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +29,13 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         //EventManager.Singleton.E_ItemCollected += CollectItem;
+        EventManager.Singleton.E_UiItemEquiped += EquipItem;
     }
 
     private void OnDisable()
     {
         //EventManager.Singleton.E_ItemCollected -= CollectItem;
+        EventManager.Singleton.E_UiItemEquiped -= EquipItem;
     }
 
 
@@ -64,6 +73,16 @@ public class PlayerController : MonoBehaviour
                 HandlePickup();
             }
         }
+
+        if (Input.GetMouseButton(2))
+        {
+            EventManager.Singleton.OnUiWindowActivated(UiWindowType.UiBackpack);
+        }
+
+        if (Input.GetMouseButtonUp(2))
+        {
+            EventManager.Singleton.OnUiWindowDisabled(UiWindowType.UiBackpack);
+        }
     }
     private void HandleHit()
     {
@@ -78,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
         if(item != null)
         {
-            Item addedItem = Backpack.AddItemToBackPack(item);
+            Item addedItem = PlayerBackpack.AddItemToBackPack(item);
 
             if(addedItem != null)
             {

@@ -26,16 +26,33 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _xzVelocity;
     private bool _isGrounded;
     private const float _gravity = -10f;
+    private bool _canMove;
 
+    private void OnEnable()
+    {
+        EventManager.Singleton.E_UiWindowActivated += OnUiActivated;
+        EventManager.Singleton.E_UiWindowDisabled += OnUiDisabled;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Singleton.E_UiWindowActivated -= OnUiActivated;
+        EventManager.Singleton.E_UiWindowDisabled -= OnUiDisabled;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        _canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!_canMove)
+        {
+            return;
+        }
+
         RotateBody();
         MoveBody();
         Jump();
@@ -90,6 +107,16 @@ public class PlayerMovement : MonoBehaviour
 
         _yVelocity.y += _gravity * Time.deltaTime;
         CharacterController.Move(_yVelocity * Time.deltaTime);
+    }
+
+    private void OnUiActivated(UiWindowType type)
+    {
+        _canMove = false;
+    }
+
+    private void OnUiDisabled(UiWindowType type)
+    {
+        _canMove = true;
     }
 }
 

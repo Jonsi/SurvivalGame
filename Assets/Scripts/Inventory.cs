@@ -35,6 +35,7 @@ public class Inventory
 
         InventorySlot newSlot = new InventorySlot(item);
         ItemSlots.Add(newSlot);
+        newSlot.index = ItemSlots.IndexOf(newSlot);
         return ItemSlots[ItemSlots.IndexOf(newSlot)];
     }
 }
@@ -44,7 +45,7 @@ public class InventorySlot
 {
     public Item ItemObject;
     public int Amount;
-
+    public int index = -1;
     public InventorySlot(Item item)
     {
         Amount = 1;
