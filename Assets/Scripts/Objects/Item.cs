@@ -13,6 +13,7 @@ public class Item : InteractableObject
     public Item ItemPrefab;
     public int MaxAmount;
     public ItemType ItemType;
+    public Sprite ItemSprite;
 
     // Start is called before the first frame update
     void Start()
