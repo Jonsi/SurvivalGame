@@ -5,7 +5,8 @@ using UnityEngine;
 public enum ItemType
 {
     WOOD,
-    TOOL
+    TOOL,
+    FirePit
 }
 
 public class Item : InteractableObject

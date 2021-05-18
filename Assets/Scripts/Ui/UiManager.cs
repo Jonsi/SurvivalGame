@@ -10,7 +10,6 @@ public class UiManager : MonoBehaviour
     public UiWindow ActiveUiWindow;
     public GraphicRaycaster Raycaster;
     public PointerEventData PointerEventData;
-    public EventSystem EventSystem;
 
     public List<UiWindow> UiWindowsPrefabs;
     private Dictionary<UiWindowType, UiWindow> _uiWindowsDic = new Dictionary<UiWindowType, UiWindow>();

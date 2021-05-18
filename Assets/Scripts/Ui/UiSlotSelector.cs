@@ -27,7 +27,7 @@ public class UiSlotSelector : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         UiInventorySlot uiSlot = collision.gameObject.GetComponent<UiInventorySlot>();
-        if (!uiSlot.isEmpty)
+        if (!uiSlot.IsEmpty)
         {
             if (SelectedSlot)
             {

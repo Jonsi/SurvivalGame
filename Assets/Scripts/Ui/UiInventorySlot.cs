@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UiInventorySlot : InteractableUi
 {
-    public bool isEmpty { get { return Slot.Amount == 0; } }
+    public bool IsEmpty { get { return Slot.Amount == 0; } }
     public InventorySlot Slot;
     public TextMeshProUGUI TextAmount;
     public Image itemImage;
