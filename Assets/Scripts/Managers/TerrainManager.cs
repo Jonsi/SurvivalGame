@@ -20,7 +20,7 @@ public class TerrainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetTerrainOriginal();
+        //SetTerrainOriginal();
 
         _treeInstancesList = new List<TreeInstance>(_terrainData.treeInstances);
         InitTreeColliders();
@@ -69,13 +69,13 @@ public class TerrainManager : MonoBehaviour
         }
     }
 
-    public void SetTerrainOriginal()
+/*    public void SetTerrainOriginal()
     {
         string TDApath = AssetDatabase.GetAssetPath(OriginalTerrainData);
         string TDApath_copy = "Assets/Terrain/TerrainData/TerrainDataCopy.asset";
         AssetDatabase.CopyAsset(TDApath, TDApath_copy);
         Terrain.activeTerrain.terrainData = AssetDatabase.LoadAssetAtPath<TerrainData>(TDApath_copy);
         _terrainData = Terrain.activeTerrain.terrainData;
-    }
+    }*/
 
 }
